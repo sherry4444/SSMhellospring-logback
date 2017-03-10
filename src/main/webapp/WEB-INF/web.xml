@@ -3,6 +3,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+  <!-- 添加日志监听器 最上面？-->
+  <context-param>
+    <param-name>logbackConfigLocation</param-name>
+    <param-value>classpath:logback.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+  </listener>
+
+
 
   <display-name></display-name>
   <welcome-file-list>
@@ -48,6 +58,6 @@
     <servlet-name>spring_mvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
+
 
 </web-app>

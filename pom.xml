@@ -16,6 +16,7 @@
     <mybatisspring.version>1.2.2</mybatisspring.version>
     <slf4j.version>1.7.7</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
+    <thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
   </properties>
 
   <!--项目依赖-->
@@ -158,7 +159,17 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.1.7</version>
+      <version>1.1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.logback-extensions</groupId>
+      <artifactId>logback-ext-spring</artifactId>
+      <version>0.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>1.7.12</version>
     </dependency>
 
   </dependencies>
