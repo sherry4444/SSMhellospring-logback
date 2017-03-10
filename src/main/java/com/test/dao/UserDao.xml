@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--mapper的namespace为dao接口的包名+名字-->
+<mapper namespace="com.test.dao.UserDao">
+
+    <!--/*
+    userId	int
+    userName	varchar
+    Password	varchar
+    salt	varchar
+    mobilePhone	varchar
+    userEmail	varchar
+    createTime	timestamp
+    modifyTime	timestamp
+    state	bit
+    role	int
+    */-->
+    <resultMap type="com.test.domain.UserInfo" id="UserResultMap">
+        <id column="userId" property="userId" jdbcType="INTEGER"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="Password" property="Password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--正确使用resultMap和resultType
+        paramterTyep为mybatis.xml定义了的以实体类名首字母小写为别名
+    -->
+    <insert id="addUser" parameterType="com.test.domain.UserInfo">
+        INSERT INTO user(userName,Password) VALUES (#{userName},#{Password})
+    </insert>
+</mapper>
